@@ -1,95 +1,84 @@
-7089CEM - Introduction to Statistical methods for Data Science
 
-# 🧠 Quantifying Emotional Impact on Brain Activity: A Nonlinear Regression and Bayesian Approach to MEG Signal Modeling
+# 🧠 Cognitive Environment Modeling & Optimization for Ambient Assisted Living
 
-## 🔍 Overview
+## 📁 Home Structure Overview
 
-This repository presents a rigorous exploration of brain signal modeling using simulated MEG (Magnetoencephalography) data in a controlled neuromarketing experiment. The goal is to determine the best regression model that captures the interaction between auditory stimuli and brain response, and to analyze the uncertainty of parameter estimates through Bayesian inference.
-
-The project integrates **Statistical Modeling**, **Bayesian Inference**, and **Scientific Visualization** to explore how emotional audio cues modulate brain activity.
+This repository contains code and documentation for two major projects under the **Coventry University** modules 7135CEM (Part 2) and 7089CEM. Both contribute to an intelligent and data-driven approach to enhancing well-being through smart environments and cognitive modeling.
 
 ---
 
-## 🎯 Objectives
+## 🗂️ Project Structure
 
-- Identify the best polynomial regression model to fit brain response data.
-- Analyze the statistical significance and distribution of model residuals.
-- Quantify uncertainty using Approximate Bayesian Computation (ABC).
-- Provide robust, interpretable insights into how emotion impacts neural responses.
-
----
-
-## 🛠️ Technologies Used
-
-- **Language:** Python
-- **Core Libraries:** Pandas, NumPy, Matplotlib, Seaborn, Statsmodels, Scipy
-- **Statistical Methods:** Ordinary Least Squares (OLS), Residual Diagnostics, AIC/BIC
-- **Bayesian Inference:** Rejection Sampling in Approximate Bayesian Computation (ABC)
-- **Platform:** Google Colab (Kaggle port in progress)
+```
+📦Home
+ ┣ 📂7135CEM (Part 2)
+ ┃ ┣ 📜Ambient Living FLC new.fis — Fuzzy Logic Controller Specification
+ ┃ ┣ 📜assistiveLiving.m — MATLAB script for defining and tuning fuzzy rules and memberships
+ ┃ ┣ 📜opt.m — Optimization experiment comparing GA, PSO, and SA
+ ┃ ┣ 📜optimization_results.csv — Performance log of optimization runs
+ ┣ 📂7089CEM
+ ┃ ┣ 📜Quantifying_Emotional_Impact_on_Brain_Activity.docx — Coursework write-up
+ ┃ ┣ 📜README_MEGBRAIN.md — Brain signal modeling summary
+```
 
 ---
 
-## 📊 Key Visualizations
+## 🧭 7135CEM (Part 2) — Adaptive Assistive Living
 
-- **Time Series Plots** for MEG and Audio Signals
-- **Boxplots** by Narration Type
-- **Scatter Plots with Regression Lines** (segregated by emotion category)
-- **Correlation Matrices**
-- **Residual Histograms and Q-Q Plots**
-- **95% Prediction Confidence Intervals**
-- **Posterior Distribution Plots** (Marginal and Joint)
+This folder contains resources for developing a **Fuzzy Logic System** to control home automation features based on environmental and behavioral parameters.
 
-![Time Series](outputs/time_series_meg_audio.png)
-![Boxplot](outputs/boxplot_emotion_effect.png)
-![Posterior](/posterior.png)
+### 🔸 Files and Purpose
 
----
+- **Ambient Living FLC new.fis**  
+  A structured `.fis` file defining inputs (temperature, humidity, CO₂ level, noise, light, etc.) and outputs (HVAC, lighting, purifier, etc.). Acts as the core for a **Fuzzy Inference System (FIS)**.
 
-## 📁 Dataset Description
+- **assistiveLiving.m**  
+  MATLAB implementation using Fuzzy Logic Designer-generated code to **construct and deploy** the FIS. Contains Gaussian membership functions and fuzzy rules for 13 inputs and 12 outputs.
 
-- `X.csv`: Contains `x1` (audio intensity) and `x2` (narration type: neutral/emotional)
-- `y.csv`: Contains `y` (MEG response)
-- `time.csv`: Timestamp for synchronization
+- **opt.m**  
+  MATLAB script comparing **Genetic Algorithm (GA)**, **Particle Swarm Optimization (PSO)**, and **Simulated Annealing (SA)** across benchmark functions. Evaluates effectiveness in optimizing the FIS or similar parameterized systems.
 
----
+- **optimization_results.csv**  
+  Automatically generated from `opt.m`, this file logs mean, std deviation, best, and worst scores of each optimization technique across multiple test runs.
 
-## 🧪 Methodology
-
-1. **Exploratory Data Analysis (EDA)** – Time plots, histograms, boxplots, and scatter matrices.
-2. **Regression Modeling** – Fit five candidate polynomial models using OLS.
-3. **Model Selection** – Use RSS, Log-Likelihood, AIC, and BIC to choose the best fit.
-4. **Residual Diagnostics** – Verify normality and homoscedasticity via Q-Q plots.
-5. **Prediction Performance** – Apply the best model on test set with 95% CI.
-6. **Bayesian Inference** – Use ABC to derive posterior distributions of key parameters.
+### 🧠 Application
+These tools work together to design **adaptive, user-preference-aware smart environments**, useful in assistive living facilities for elderly or differently-abled individuals. Optimization helps identify the best control strategy across multiple conflicting comfort and energy objectives.
 
 ---
 
-## 📈 Results
+## 🧠 7089CEM — Statistical Modeling of MEG Signals
 
-- **Model 3** achieved the lowest AIC/BIC and had residuals closest to normality.
-- ABC posterior distributions supported the reliability of frequentist estimates.
-- Emotionally narrated content triggered stronger MEG signals, aligning with neuroscience findings on affective processing.
+This study models brain activity from a neuromarketing experiment using a nonlinear polynomial regression approach and Approximate Bayesian Computation (ABC).
+
+### 📄 Report
+- **Quantifying_Emotional_Impact_on_Brain_Activity.docx**  
+  Academic paper exploring the relationship between emotional stimuli and brain response using MEG signals. Includes visualizations, model diagnostics, and Bayesian posterior inferences.
+
+- **README_MEGBRAIN.md**  
+  A structured summary of the 7089CEM coursework, including methodology, evaluation, and how to reproduce the work in Python.
 
 ---
 
 ## 📬 Contact
 
 **Author:** Benjamin Ibok  
-**Institution:** Coventry University  
 **University Email:** ibokb@uni.coventry.ac.uk  
 **Personal Email:** benjaminsibok@gmail.com  
+**Institution:** Coventry University  
 
 ---
 
 ## 📚 Citation
 
-If you use this repository in your academic work:
+If you use any part of this repository:
 
-> Ibok, B. (2025). *Quantifying Emotional Impact on Brain Activity: A Nonlinear Regression and Bayesian Approach to MEG Signal Modeling*. Coventry University.
+> Ibok, B. (2025). *Cognitive Environment Modeling & Optimization for Ambient Assisted Living and Brain Signal Interpretation*. Coventry University.
 
 ---
 
-## 🔗 Project Link
+## 🏁 Final Note
 
-The full notebook and reproducible code can be found here:  
-[GitHub Repository](https://github.com/JaminUbuntu/IBOK_STA/blob/main/real_IBOKb_STA_CW.ipynb)
+This project represents the fusion of **machine learning, fuzzy logic, neuroscience, and optimization** in advancing intelligent environments and human-centric analytics.
+
+---
+
