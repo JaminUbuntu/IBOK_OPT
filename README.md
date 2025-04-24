@@ -1,144 +1,73 @@
 
 # 🧠 Quantifying Emotional Impact on Brain Activity: A Nonlinear Regression and Bayesian Approach to MEG Signal Modeling
 
-## 📁 Folder Overview
+## 🔍 Overview
 
-This project is housed under the folder `7135CEM (Part 2)` and includes both a scientific paper and its companion codebase. The work stems from coursework for the **7089CEM: Introduction to Statistical Methods for Data Science** module at Coventry University. It investigates the effect of emotional auditory stimuli on brain activity using **Magnetoencephalography (MEG)** data.
+This repository presents a rigorous exploration of brain signal modeling using simulated MEG (Magnetoencephalography) data in a controlled neuromarketing experiment. The goal is to determine the best regression model that captures the interaction between auditory stimuli and brain response, and to analyze the uncertainty of parameter estimates through Bayesian inference.
 
----
-
-## 🧠 Research Objective
-
-The aim of the project is to model how emotional versus neutral audio narration modulates brain responses using MEG signal data. It employs **Nonlinear Polynomial Regression** and **Approximate Bayesian Computation (ABC)** to:
-
-- Identify the best regression model among candidates.
-- Estimate and validate the model parameters.
-- Quantify model uncertainty using Bayesian techniques.
+The project integrates **Statistical Modeling**, **Bayesian Inference**, and **Scientific Visualization** to explore how emotional audio cues modulate brain activity.
 
 ---
 
-## 📊 Topics & Structure (Aligned with Paper)
+## 🎯 Objectives
 
-### 📌 1. Introduction
-
-Introduces the significance of emotional auditory processing in cognitive neuroscience and neuromarketing. Emphasizes the potential of MEG for high-resolution brain activity modeling.
-
----
-
-### 📌 2. Dataset Description
-
-- `x₁`: Continuous audio intensity values (real-valued signal)
-- `x₂`: Binary indicator (0 for neutral narration, 1 for emotional)
-- `y`: MEG signal values, nonlinear function of x₁ and x₂, with additive Gaussian noise
-
-The dataset simulates a 20-second exposure: 10 seconds of neutral narration followed by 10 seconds of emotional narration.
+- Identify the best polynomial regression model to fit brain response data.
+- Analyze the statistical significance and distribution of model residuals.
+- Quantify uncertainty using Approximate Bayesian Computation (ABC).
+- Provide robust, interpretable insights into how emotion impacts neural responses.
 
 ---
 
-### 📌 3. Experimental Design
+## 🛠️ Technologies Used
 
-Describes the simulated experimental paradigm:
-- Subject listens to an advertisement in two phases (neutral → emotional)
-- Models MEG response to distinguish changes in neural activity
-
----
-
-### 📌 4. Preliminary Data Analysis
-
-Performed via Python visualizations:
-- Time series plots of x₁, x₂, y
-- Histograms and distributions
-- Scatter matrices (pairplots)
-- Correlation heatmaps
-- Boxplots comparing brain response across narration types
-
-These analyses reveal positive correlations and distributional insights supportive of regression modeling.
+- **Language:** Python
+- **Core Libraries:** Pandas, NumPy, Matplotlib, Seaborn, Statsmodels, Scipy
+- **Statistical Methods:** Ordinary Least Squares (OLS), Residual Diagnostics, AIC/BIC
+- **Bayesian Inference:** Rejection Sampling in Approximate Bayesian Computation (ABC)
+- **Platform:** Google Colab (Kaggle port in progress)
 
 ---
 
-### 📌 5. Regression Model Formulation
+## 📊 Key Visualizations
 
-Five **nonlinear polynomial regression models** were proposed. Each integrates powers of x₁ and categorical input x₂. 
+- **Time Series Plots** for MEG and Audio Signals
+- **Boxplots** by Narration Type
+- **Scatter Plots with Regression Lines** (segregated by emotion category)
+- **Correlation Matrices**
+- **Residual Histograms and Q-Q Plots**
+- **95% Prediction Confidence Intervals**
+- **Posterior Distribution Plots** (Marginal and Joint)
 
-- Models range from simple linear forms to quintic polynomials
-- Each includes an intercept (bias) term
-
----
-
-### 📌 6. Model Parameter Estimation
-
-Parameters were estimated using **Ordinary Least Squares (OLS)**:
-```python
-θ̂ = (XᵀX)⁻¹Xᵀy
-```
-
-Predicted values and fitted plots were generated for each model across the full dataset.
+![Time Series](outputs/time_series_meg_audio.png)
+![Boxplot](outputs/boxplot_emotion_effect.png)
+![Posterior](outputs/posterior_abc.png)
 
 ---
 
-### 📌 7. Residual Diagnostics
+## 📁 Dataset Description
 
-Residuals were:
-- Plotted via histograms and Q-Q plots
-- Evaluated for normality (Gaussian behavior)
-- Checked for bias and heteroscedasticity
-
-Model 3 showed near-perfect Gaussian residuals—ideal for OLS assumptions.
+- `X.csv`: Contains `x1` (audio intensity) and `x2` (narration type: neutral/emotional)
+- `y.csv`: Contains `y` (MEG response)
+- `time.csv`: Timestamp for synchronization
 
 ---
 
-### 📌 8. Model Evaluation (RSS, AIC, BIC, Log-Likelihood)
+## 🧪 Methodology
 
-Each model was compared using:
-- **Residual Sum of Squares (RSS)**
-- **Log-Likelihood**
-- **Akaike Information Criterion (AIC)**
-- **Bayesian Information Criterion (BIC)**
-
-Model 3 had the best tradeoff between complexity and fit.
-
----
-
-### 📌 9. Prediction Performance & Confidence Intervals
-
-- 70/30 Train-Test split
-- Predicted MEG signal on test set
-- Visualized with 95% confidence intervals
-
-This demonstrated **robust generalization** and reliable prediction bounds.
+1. **Exploratory Data Analysis (EDA)** – Time plots, histograms, boxplots, and scatter matrices.
+2. **Regression Modeling** – Fit five candidate polynomial models using OLS.
+3. **Model Selection** – Use RSS, Log-Likelihood, AIC, and BIC to choose the best fit.
+4. **Residual Diagnostics** – Verify normality and homoscedasticity via Q-Q plots.
+5. **Prediction Performance** – Apply the best model on test set with 95% CI.
+6. **Bayesian Inference** – Use ABC to derive posterior distributions of key parameters.
 
 ---
 
-### 📌 10. Approximate Bayesian Computation (ABC)
+## 📈 Results
 
-To quantify uncertainty in θ:
-- Rejection Sampling was applied on top two parameters
-- Uniform priors centered on OLS estimates
-- Plotted marginal and joint posterior distributions
-
-Findings confirmed frequentist estimates with narrow credible intervals.
-
----
-
-### 📌 11. Results & Discussion
-
-- Model 3 dominated all performance metrics
-- Emotional narration elicited stronger MEG response
-- Residuals and ABC validated the model structure and inference
-
----
-
-### 📌 12. Conclusion and Future Work
-
-- Polynomial regression + Bayesian inference = robust framework
-- Suggested future: Multivariate modeling, MCMC over ABC
-
----
-
-## 🔗 Project Artifacts
-
-- 📄 `Quantifying_Emotional_Impact_on_Brain_Activity.docx` — Full academic report
-- 📘 [`real_IBOKb_STA_CW.ipynb`](https://github.com/JaminUbuntu/IBOK_STA/blob/main/real_IBOKb_STA_CW.ipynb) — Python code implementation
+- **Model 3** achieved the lowest AIC/BIC and had residuals closest to normality.
+- ABC posterior distributions supported the reliability of frequentist estimates.
+- Emotionally narrated content triggered stronger MEG signals, aligning with neuroscience findings on affective processing.
 
 ---
 
@@ -153,7 +82,13 @@ Findings confirmed frequentist estimates with narrow credible intervals.
 
 ## 📚 Citation
 
+If you use this repository in your academic work:
+
 > Ibok, B. (2025). *Quantifying Emotional Impact on Brain Activity: A Nonlinear Regression and Bayesian Approach to MEG Signal Modeling*. Coventry University.
 
 ---
 
+## 🔗 Project Link
+
+The full notebook and reproducible code can be found here:  
+[GitHub Repository](https://github.com/JaminUbuntu/IBOK_STA/blob/main/real_IBOKb_STA_CW.ipynb)
