@@ -1,3 +1,4 @@
+7089CEM - Introduction to Statistical methods for Data Science
 
 # 🧠 Quantifying Emotional Impact on Brain Activity: A Nonlinear Regression and Bayesian Approach to MEG Signal Modeling
 
