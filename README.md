@@ -1,5 +1,6 @@
 
-# 🧠 Quantifying Emotional Impact on Brain Activity: A Nonlinear Regression and Bayesian Approach to MEG Signal Modeling
+# 🧠 Quantifying Emotional Impact on Brain Activity: 
+_A Nonlinear Regression and Bayesian Approach to MEG Signal Modeling_
 
 ## 🔍 Overview
 
