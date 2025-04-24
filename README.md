@@ -91,4 +91,4 @@ If you use this repository in your academic work:
 ## 🔗 Project Link
 
 The full notebook and reproducible code can be found here:  
-[GitHub Repository](https://github.com/JaminUbuntu/IBOK_STA/blob/main/real_IBOKb_STA_CW.ipynb)
+[GitHub Repository](https://github.com/JaminUbuntu/IBOK_OPT/blob/main/Optimization_IBOKb_CW.ipynb)
