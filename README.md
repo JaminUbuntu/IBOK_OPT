@@ -38,8 +38,8 @@ The project integrates **Statistical Modeling**, **Bayesian Inference**, and **S
 - **95% Prediction Confidence Intervals**
 - **Posterior Distribution Plots** (Marginal and Joint)
 
-![Time Series](outputs/time_series_meg_audio.png)
-![Boxplot](outputs/boxplot_emotion_effect.png)
+![Time Series](/time_series_meg_audio.png)
+![Boxplot](/scatter_plot.png)
 ![Posterior](outputs/posterior_abc.png)
 
 ---
