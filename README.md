@@ -41,7 +41,7 @@ The project integrates **Statistical Modeling**, **Bayesian Inference**, and **S
 
 ![Time Series](outputs/time_series_meg_audio.png)
 ![Boxplot](outputs/boxplot_emotion_effect.png)
-![Posterior](outputs/posterior_abc.png)
+![Posterior](/posterior.png)
 
 ---
 
